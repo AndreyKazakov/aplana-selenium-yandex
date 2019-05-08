@@ -66,4 +66,14 @@ public class BaseSteps {
         driver.get(baseUrl);
     }
 
+    @Step("приостановлено выполнение на {0} секунд")
+    public void stepStopExecution(int timeout) {
+        try {
+            Thread.sleep(timeout*1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+    }
+
 }
