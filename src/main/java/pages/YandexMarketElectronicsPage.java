@@ -11,9 +11,6 @@ import java.util.List;
 
 public class YandexMarketElectronicsPage extends BasePage {
 
-//    @FindBy(xpath = "//div[@data-apiary-widget-name='@MarketNode/NavigationTree']//a[text()='Аудио- и видеотехника']/parent::div/following-sibling::div//a")
-//    List<WebElement> audioAndVideoLeftMenu;
-
     @FindBy(xpath = "//div[@data-apiary-widget-name='@MarketNode/NavigationTree']//div[contains(@class,'section')]/div/div/div/div[1]/a")
     List<WebElement> leftMenu;
 
@@ -21,15 +18,6 @@ public class YandexMarketElectronicsPage extends BasePage {
         PageFactory.initElements(BaseSteps.getDriver(), this);
     }
 
-//    public void selectAudioAndVideoLeftMenuItem(String menuItem) {
-//        for (WebElement element: audioAndVideoLeftMenu){
-//            if (menuItem.equals(element.getText())) {
-//                element.click();
-//                return;
-//            }
-//        }
-//        Assert.fail(String.format("В меню не найден пункт [%s]", menuItem));
-//    }
 
     public void selectLeftSubMenuItem(String menuItem, String subMenuItem) {
         for (WebElement element: leftMenu){
