@@ -10,6 +10,11 @@ public class YandexMarketLandingPageSteps {
         new YandexMarketLandingPage().selectCategoriesTopMenuItem(menuItem);
     }
 
+    @Step("выполнен поиск по ключевым словам {0}")
+    public void stepSearchByKeyword(String keyword) {
+        new YandexMarketLandingPage().searchByKeyword(keyword);
+    }
+
 }
 
 

@@ -13,6 +13,12 @@ public class YandexMarketLandingPage extends BasePage {
     @FindBy(xpath = "//div[contains(@class,'interaction_click-navigation-menu')]/following-sibling::div[contains(@class,'tab_type_navigation-menu')]")
     List<WebElement> categoriesTopMenu;
 
+    @FindBy(xpath = "//input[@id='header-search']")
+    WebElement searchBar;
+
+    @FindBy(xpath = "//span[text()='Найти']/parent::button[@type='submit']")
+    WebElement btnSearch;
+
 
     public YandexMarketLandingPage() {
         PageFactory.initElements(BaseSteps.getDriver(), this);
@@ -26,6 +32,11 @@ public class YandexMarketLandingPage extends BasePage {
             }
         }
         Assert.fail(String.format("В меню не найден пункт [%s]", menuItem));
+    }
+
+    public void searchByKeyword(String keyword){
+        fillTextField(searchBar, keyword);
+        btnSearch.click();
     }
 
 
